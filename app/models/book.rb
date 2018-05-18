@@ -13,4 +13,8 @@ class Book < ApplicationRecord
   def lowest_rating
     reviews.minimum(:rating)
   end
+
+  def highest_rating_review
+    reviews.order(rating: :desc).first
+  end
 end

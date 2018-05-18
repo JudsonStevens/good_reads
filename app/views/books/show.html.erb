@@ -4,9 +4,12 @@
 
 <%= @book.average_rating %>
 
-<h1>Highest Rating</h1>
+<h2>Highest Rating</h2>
 
-<%= @book.highest_rating %>
+<p>
+  <%= @book.highest_rating %>
+  <%= @book.highest_rating_review.content %>
+</p>
 
 <h1>Lowest Rating</h1>
 

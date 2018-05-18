@@ -51,5 +51,19 @@ describe 'User' do
 
       expect(page).to have_content(3)
     end
+
+    it 'can see the highest rating along with review content and user name for the book' do
+      book_1 = Book.create(title: 'Harry Potter')
+      user_1 = User.create(name: 'Bobby')
+      review_1 =  book_1.reviews.create(content: 'Great Book', user_id: user_1.id, rating: 4)
+      review_2 =  book_1.reviews.create(content: 'Great Book 66', user_id: user_1.id, rating: 3)
+      review_3 =  book_1.reviews.create(content: 'Great Book 55', user_id: user_1.id, rating: 3)
+
+      visit(book_path(book_1))
+      
+      within('p') do
+        expect(page).to have_content(review_1.content)
+      end
+    end
   end
 end
