@@ -8,6 +8,11 @@
 
 <%= @book.highest_rating %>
 
+<h1>Lowest Rating</h1>
+
+<%= @book.lowest_rating %>
+
+
 <% @reviews.each do |review| %>
   <%= review.content %>
   <%= review.rating %>
