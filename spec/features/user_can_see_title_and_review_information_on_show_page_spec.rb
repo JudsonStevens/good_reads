@@ -11,7 +11,9 @@ describe 'User' do
 
       expect(current_path).to eq(book_path(book_1))
       expect(page).to have_content(book_1.title)
-      expect(page).to 
+      expect(page).to have_content(review_1.content)
+      expect(page).to have_content(review_1.rating)
+      expect(page).to have_content(user_1.name)
     end
   end
 end

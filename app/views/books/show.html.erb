@@ -3,5 +3,5 @@
 <% @reviews.each do |review| %>
   <%= review.content %>
   <%= review.rating %>
-  <%= review.author %>
+  <%= review.user.name %>
 <% end %>
