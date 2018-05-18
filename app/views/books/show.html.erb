@@ -1,7 +1,12 @@
 <h1><%= @book.title %></h1>
 
+<h1>Average Rating</h1>
+
+<%= @book.average_rating %>
+
 <% @reviews.each do |review| %>
   <%= review.content %>
   <%= review.rating %>
   <%= review.user.name %>
 <% end %>
+
