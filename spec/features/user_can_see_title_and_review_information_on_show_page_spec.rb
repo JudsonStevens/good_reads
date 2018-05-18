@@ -4,7 +4,8 @@ describe 'User' do
   describe 'user goes to a books show page' do
     it 'can see the book title, reviews for that book, a rating for the book, and an author of the review' do
       book_1 = Book.create(title: 'Harry Potter')
-      review_1 =  
+      user_1 = User.create(name: 'Bobby')
+      review_1 =  book_1.reviews.create(content: 'Great Book', user_id: user_1.id, rating: 4)
 
       visit(book_path(book_1))
 
