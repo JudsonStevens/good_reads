@@ -63,6 +63,7 @@ describe 'User' do
       
       within('p') do
         expect(page).to have_content(review_1.content)
+        expect(page).to have_content(review_1.user.name)
       end
     end
   end
